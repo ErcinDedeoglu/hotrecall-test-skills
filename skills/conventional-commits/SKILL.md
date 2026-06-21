@@ -56,6 +56,11 @@ refactor(auth)!: drop the legacy session cookie
 BREAKING CHANGE: cookie-based sessions are removed; use bearer tokens.
 ```
 
+## Tooling
+
+Commitlint enforces the convention in CI; Commitizen prompts for the fields
+interactively; semantic-release reads the history to publish versions.
+
 ## Why it matters
 
 A structured history lets release tooling (semantic-release, changesets, etc.)
