@@ -1,6 +1,6 @@
 ---
 name: conventional-commits
-description: Write Conventional Commits — the type(scope): subject format, the common commit types, breaking-change notation, and how structured commit history enables automated changelogs and semantic-version inference.
+description: "Write Conventional Commits — the type(scope): subject format, the common commit types, breaking-change notation, and how structured commit history enables automated changelogs and semantic-version inference."
 tags: [git, conventions, ci]
 ---
 
