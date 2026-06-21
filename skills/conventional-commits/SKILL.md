@@ -45,6 +45,17 @@ Signal a breaking change in either of two ways — both trigger a MAJOR bump:
 1. Append `!` after the type/scope: `feat(api)!: drop v1 endpoints`.
 2. Add a footer: `BREAKING CHANGE: the v1 endpoints have been removed`.
 
+## Examples
+
+```
+feat(parser): add array-literal support
+fix(api): return 404 instead of 500 on missing skill
+docs: clarify the breaking-change footer
+refactor(auth)!: drop the legacy session cookie
+
+BREAKING CHANGE: cookie-based sessions are removed; use bearer tokens.
+```
+
 ## Why it matters
 
 A structured history lets release tooling (semantic-release, changesets, etc.)
