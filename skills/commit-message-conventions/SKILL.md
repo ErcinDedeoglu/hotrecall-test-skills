@@ -55,3 +55,7 @@ Footers carry metadata: `BREAKING CHANGE: ...`, `Refs: #123`, `Reviewed-by: ...`
 A consistent, parseable history lets semantic-release / changesets compute the
 next version and assemble a changelog with zero manual bookkeeping, and keeps
 `git log` scannable by type and scope.
+
+## Tooling note
+
+Commitlint, Commitizen, and semantic-release all consume this format.
