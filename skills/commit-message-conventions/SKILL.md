@@ -1,67 +1,42 @@
 ---
 name: commit-message-conventions
-description: "Commit message conventions: the type(scope): subject format, standard commit types including revert, breaking-change markers, and how a structured history drives changelog generation and semantic versioning."
-tags: [git, conventions, ci, changelog]
+description: "Conventional Commits message format: the type(scope): subject structure, the standard commit types, breaking-change notation, and how a structured history drives changelogs and semantic versioning."
+tags: [git, conventions, ci]
 ---
 
-# Commit Message Conventions
+# Conventional Commits
 
-A convention for writing commit messages that are both human-readable and
-machine-parseable, so release tooling can generate changelogs and infer the next
-semantic version automatically. (This is the Conventional Commits style.)
+A lightweight convention for commit messages that is both human-readable and
+machine-parseable, so tooling can derive changelogs and the next semantic version
+automatically.
 
-## Structure
+## Format
 
 ```
-<type>(<optional scope>): <subject>
+<type>(<optional scope>): <description>
 
 <optional body>
 
 <optional footer(s)>
 ```
 
-- **type** — the category of change (required).
-- **scope** — optional area affected, in parentheses, e.g. `fix(parser):`.
-- **subject** — short imperative summary; no trailing period.
+- **type** — the kind of change (required).
+- **scope** — an optional area in parentheses, e.g. `feat(auth):`.
+- **description** — a short, imperative summary ("add", not "added").
 
-## Types
+## Common types
 
-| Type | Meaning | Version bump |
-| --- | --- | --- |
-| `feat` | a new feature | MINOR |
-| `fix` | a bug fix | PATCH |
-| `docs` | documentation only | none |
-| `style` | formatting, no code-meaning change | none |
-| `refactor` | neither a fix nor a feature | none |
-| `perf` | a performance improvement | PATCH |
-| `test` | tests added or corrected | none |
-| `build` | build system / dependencies | none |
-| `ci` | CI configuration | none |
-| `chore` | maintenance / tooling | none |
-| `revert` | reverts a previous commit | none |
+`feat` (MINOR), `fix` (PATCH), `docs`, `refactor`, `perf` (PATCH), `test`,
+`build`, `ci`, `chore`.
 
 ## Breaking changes
 
-Mark a breaking change (MAJOR bump) either by appending `!` after the
-type/scope (`feat(api)!: ...`) or with a `BREAKING CHANGE:` footer.
-
-## Footers
-
-Footers carry metadata: `BREAKING CHANGE: ...`, `Refs: #123`, `Reviewed-by: ...`,
-`Co-authored-by: ...`. They follow a blank line after the body.
+Append `!` after the type/scope (`feat(api)!: ...`) or add a
+`BREAKING CHANGE:` footer — both trigger a MAJOR bump.
 
 ## Why it matters
 
-A consistent, parseable history lets semantic-release / changesets compute the
-next version and assemble a changelog with zero manual bookkeeping, and keeps
-`git log` scannable by type and scope.
+A structured history lets semantic-release / changesets infer the next version
+and generate a changelog with no manual bookkeeping.
 
-## Tooling note
-
-Commitlint, Commitizen, and semantic-release all consume this format.
-
-## Subject and body length
-
-Keep the subject line at 50 characters or fewer; never exceed 72. Separate the
-subject from the body with one blank line, and hard-wrap the body at 72 columns
-so `git log` and email clients render it without horizontal scrolling.
+> Tip: run `git commit --amend` to fix the most recent message before pushing.
