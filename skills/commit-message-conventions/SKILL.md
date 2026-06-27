@@ -59,3 +59,9 @@ next version and assemble a changelog with zero manual bookkeeping, and keeps
 ## Tooling note
 
 Commitlint, Commitizen, and semantic-release all consume this format.
+
+## Subject and body length
+
+Keep the subject line at 50 characters or fewer; never exceed 72. Separate the
+subject from the body with one blank line, and hard-wrap the body at 72 columns
+so `git log` and email clients render it without horizontal scrolling.
